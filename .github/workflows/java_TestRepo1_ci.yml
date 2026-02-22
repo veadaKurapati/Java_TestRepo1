@@ -39,5 +39,5 @@ jobs:
           context: .
           push: true
           tags: |
-            ${{ vars.DOCKERHUB_USERNAME }}/java-testrepo1:latest:1.0.0
+            ${{ vars.DOCKERHUB_USERNAME }}/java-testrepo1:1.0.0
             ${{ vars.DOCKERHUB_USERNAME }}/java-testrepo1:${{ github.sha }}
