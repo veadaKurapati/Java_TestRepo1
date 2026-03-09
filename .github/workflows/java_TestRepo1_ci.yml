@@ -39,5 +39,13 @@ jobs:
           context: .
           push: true
           tags: |
-            ${{ vars.DOCKERHUB_USERNAME }}/java-testrepo1:latest:1.0.0
+            ${{ vars.DOCKERHUB_USERNAME }}/java-testrepo1:latest
             ${{ vars.DOCKERHUB_USERNAME }}/java-testrepo1:${{ github.sha }}
+      
+      #Pull image from Docker Hub
+      - name: Pull Docker image from Docker Hub
+        run: docker pull ${{ vars.DOCKERHUB_USERNAME }}/java-testrepo1:latest
+
+      # Run the Docker container
+      - name: Run Docker container
+        run: docker run --rm ${{ vars.DOCKERHUB_USERNAME }}/java-testrepo1:latest
